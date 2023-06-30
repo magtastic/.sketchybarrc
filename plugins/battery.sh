@@ -16,7 +16,7 @@ case "$battery_percent" in
     4[0-9]) icon="􀺶" color=$COLOR_DEFAULT_ICON ;;
     3[0-9]) icon="􀛩" color=$COLOR_DEFAULT_ICON ;;
     2[0-9]) icon="􀛩" color=$COLOR_DEFAULT_ICON ;;
-    1[0-9]) icon="􀛪" color=$COLOR_ATTENTION_ICON ;;
+    1[0-9]) icon="􀛩" color="0xffbe3536" ;;
     *)      icon="􀛪" color=$COLOR_DEFAULT_ICON ;;
 esac
 
@@ -29,9 +29,7 @@ if [ "$(pgrep -x "caffeinate")" != "" ]; then
     icon="􀸙 ${icon}"
 fi
 
-sketchybar -m --set $NAME icon.color="$color"         \
-                          icon="$icon"                \
-                          label="${battery_percent}%"
+sketchybar -m --set $NAME label="$icon"
 
 
 

@@ -2,18 +2,18 @@
 
 source "/Users/magtastic/.config/sketchybar/colors.sh"
 
-PADDINGS=3 # All paddings use this value (icon, label, background and bar paddings)
+PADDINGS=5 # All paddings use this value (icon, label, background and bar paddings)
 
 PLUGIN_DIR="/Users/magtastic/.config/sketchybar/plugins"
 ITEM_DIR="/Users/magtastic/.config/sketchybar/items"
 UPDATE_DIR="/Users/magtastic/.config/sketchybar/updates"
 
 sketchybar --bar sticky=on           \
-                 height=32           \
+                 height=35           \
                  blur_radius=25      \
                  position=top        \
-                 padding_left=5      \
-                 padding_right=5     \
+                 padding_left=10     \
+                 padding_right=10    \
                  color=$COLOR_BAR    \
                  topmost=off         \
                  shadow=on           \
@@ -23,35 +23,35 @@ sketchybar --default updates=when_shown                        \
                      drawing=on                                \
                      label.font="SF Pro Display:Semibold:13.0" \
                      label.color=$COLOR_DEFAULT_LABEL          \
-                     label.padding_left=$PADDINGS              \
-                     label.padding_right=$PADDINGS             \
+                     label.padding_left=0                      \
+                     label.padding_right=0                     \
                      label.y_offset=0                          \
                      icon.font="SF Pro Display:Semibold:15.0"  \
                      icon.color=$COLOR_DEFAULT_ICON            \
-                     icon.padding_left=$PADDINGS               \
-                     icon.padding_right=$PADDINGS              \
+                     icon.padding_left=0                       \
+                     icon.padding_right=2                      \
                      background.corner_radius=3                \
-                     background.padding_left=$PADDINGS         \
-                     background.padding_right=$PADDINGS
+                     background.padding_left=5                 \
+                     background.padding_right=5
 
 source "$ITEM_DIR/space.list.sh"
-source "$ITEM_DIR/space.new.sh"
 source "$ITEM_DIR/space.mode.sh"
 
 source "$ITEM_DIR/window.title.sh"
 
 source "$ITEM_DIR/calendar.clock.sh"
-source "$ITEM_DIR/calendar.date.sh"
 
 source "$ITEM_DIR/sound.output.sh"
-source "$ITEM_DIR/sound.input.sh"
 
 source "$ITEM_DIR/network.wifi.sh"
-source "$ITEM_DIR/network.vpn.sh"
+# source "$ITEM_DIR/network.vpn.sh"
 
-source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/input.source.sh"
 
 source "$ITEM_DIR/upcoming.sh"
+
+source "$ITEM_DIR/battery.sh"
+# source "$ITEM_DIR/calendar.date.sh"
 
 ##### Finalizing Setup #####
 sketchybar --update

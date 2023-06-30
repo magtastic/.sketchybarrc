@@ -27,5 +27,4 @@ fi
 
 INFO=$(printf "%2s" $INFO)
 
-sketchybar -m --set $NAME icon=$ICON \
-              --set $NAME label="$INFO%"
+sketchybar -m --set $NAME icon=$ICON

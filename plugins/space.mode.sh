@@ -9,11 +9,29 @@ case "$(echo "$QUERY" | jq -r '.app')" in
     "iTerm2")
       icon="􀩼"
       ;;
+    "Xcode")
+      icon="􀷔"
+      ;;
     "SF Symbols")
       icon="􁂮"
       ;;
     "Firefox Developer Edition")
       icon="􀤆"
+      ;;
+    "Simulator")
+      icon="􀟜"
+      ;;
+    "App Store")
+      icon="􀈄"
+      ;;
+    "Notion")
+      icon="􀺴"
+      ;;
+    "1Password")
+      icon="􀙵"
+      ;;
+    "Arc")
+      icon="􀎬"
       ;;
     "Messages")
       icon="􀌤"
@@ -21,11 +39,29 @@ case "$(echo "$QUERY" | jq -r '.app')" in
     "Messenger")
       icon="􀌤"
       ;;
+    "Polymail")
+      icon="􀍕"
+      ;;
+    "Cron")
+      icon="􀉉"
+      ;;
+    "zoom.us")
+      icon="􀍉"
+      ;;
+    "Asana")
+      icon="􀷾"
+      ;;
     "Install Command Line Developer Tools")
       icon="􀌤"
       ;;
     "Slack")
       icon="􀃪"
+      ;;
+    "System Settings")
+      icon="􀣋"
+      ;;
+    "Postman")
+      icon="􀪹"
       ;;
     "Finder")
       icon="􀈕"
