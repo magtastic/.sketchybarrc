@@ -5,8 +5,8 @@ sketchybar --add item              window.title left                            
                                    script="$PLUGIN_DIR/window.title.sh"                   \
                                    updates=on                                             \
                                    icon.font="SF Pro:Heavy:13.0"                          \
-                                   icon.color=$COLOR_DESACTIVATED_ICON                    \
-                                   label.color=$COLOR_DESACTIVATED_LABEL                  \
+                                   icon.color=$COLOR_DEACTIVATED_ICON                    \
+                                   label.color=$COLOR_DEACTIVATED_LABEL                  \
                                                                                           \
           --add event              window_title_changed                                   \
                                                                                           \

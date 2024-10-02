@@ -33,6 +33,12 @@ case "$(echo "$QUERY" | jq -r '.app')" in
     "Arc")
       icon="􀎬"
       ;;
+    "Safari")
+      icon="􀎬"
+      ;;
+    "Google Chrome")
+      icon="􀎬"
+      ;;
     "Messages")
       icon="􀌤"
       ;;

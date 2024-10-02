@@ -11,7 +11,7 @@ for i in "${!SPACE_ICONS[@]}"; do
                                         icon.width=22                                  \
                                         icon.align=center                              \
                                         icon.color=$COLOR_DEFAULT_ICON                 \
-                                        icon.highlight_color=0xfff2a743                \
+                                        icon.highlight_color=$COLOR_ACTIVATED_ICON                \
                                         icon.font="SF Pro:Bold:17.0"                   \
                                         background.drawing=off                         \
                                         label.drawing=off                              \
