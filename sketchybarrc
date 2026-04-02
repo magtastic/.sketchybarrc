@@ -9,10 +9,10 @@ ITEM_DIR="/Users/magtastic/.config/sketchybar/items"
 UPDATE_DIR="/Users/magtastic/.config/sketchybar/updates"
 
 sketchybar --bar sticky=on           \
-                 height=35           \
+                 height=40           \
                  blur_radius=25      \
                  position=top        \
-                 padding_left=10     \
+                 padding_left=15     \
                  padding_right=10    \
                  color=$COLOR_BAR    \
                  topmost=off         \
@@ -22,12 +22,12 @@ sketchybar --bar sticky=on           \
 sketchybar --default updates=when_shown                        \
                      drawing=on                                \
                      label.font="SF Pro Display:Semibold:13.0" \
-                     label.color=$COLOR_DEFAULT_LABEL          \
+                     label.color=0xffffffff                    \
                      label.padding_left=0                      \
                      label.padding_right=0                     \
                      label.y_offset=0                          \
                      icon.font="SF Pro Display:Semibold:15.0"  \
-                     icon.color=$COLOR_DEFAULT_ICON            \
+                     icon.color=0xffffffff                     \
                      icon.padding_left=0                       \
                      icon.padding_right=2                      \
                      background.corner_radius=3                \
@@ -35,13 +35,26 @@ sketchybar --default updates=when_shown                        \
                      background.padding_right=5
 
 source "$ITEM_DIR/space.list.sh"
-source "$ITEM_DIR/space.mode.sh"
-source "$ITEM_DIR/window.title.sh"
 source "$ITEM_DIR/calendar.clock.sh"
 source "$ITEM_DIR/sound.output.sh"
 source "$ITEM_DIR/network.wifi.sh"
 source "$ITEM_DIR/input.source.sh"
 source "$ITEM_DIR/battery.sh"
+
+##### Bracket: left-side workspace group #####
+sketchybar --add bracket workspace                                                     \
+                space.list.1 space.list.2 space.list.3 space.list.4 space.list.5       \
+                space.list.6 space.list.7 space.list.8 space.list.9 space.list.10      \
+                space.list.11 space.list.12 space.list.13                               \
+           --set workspace background.color=0x20cdd6f4                                 \
+                           background.corner_radius=8                                  \
+                           background.height=30
+
+##### Bracket: right-side status group #####
+sketchybar --add bracket status battery calendar.clock sound.output network.wifi input \
+           --set status background.color=0x20cdd6f4                                   \
+                        background.corner_radius=8                                    \
+                        background.height=30
 
 ##### Autohide bar when native menu bar appears #####
 pkill -f "bar.autohide.ts" 2>/dev/null

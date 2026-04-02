@@ -2,7 +2,7 @@
 import { $ } from "bun";
 import { sketchybar } from "./lib/sketchybar.ts";
 
-const BAR_HEIGHT = 35;
+const BAR_HEIGHT = 40;
 
 const getMouseY = async (): Promise<number> => {
   const result = await $`osascript -e 'use framework "AppKit"
