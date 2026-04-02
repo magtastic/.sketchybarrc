@@ -1,0 +1,35 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "files": {
+    "includes": ["plugins/**/*.ts"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "linter": {
+    "rules": {
+      "recommended": true,
+      "complexity": { "recommended": true, "useLiteralKeys": "off" },
+      "correctness": { "recommended": true },
+      "performance": { "recommended": true },
+      "security": { "recommended": true },
+      "style": {
+        "recommended": true,
+        "noNonNullAssertion": "error",
+        "noParameterAssign": "error",
+        "useConst": "error",
+        "useExplicitLengthCheck": "error",
+        "useTemplate": "error",
+        "useConsistentArrayType": { "level": "error", "options": { "syntax": "shorthand" } },
+        "noProcessEnv": "off"
+      },
+      "suspicious": {
+        "recommended": true,
+        "noExplicitAny": "error",
+        "noConsole": "off"
+      }
+    }
+  }
+}

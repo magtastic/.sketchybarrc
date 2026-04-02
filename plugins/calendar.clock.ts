@@ -1,8 +1,10 @@
 #!/Users/magtastic/.bun/bin/bun
+import { env } from "./lib/env.ts";
 import { sketchybar } from "./lib/sketchybar.ts";
 
-const NAME = process.env.NAME!;
+const NAME = env("NAME");
 const now = new Date();
-const label = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+const hours = String(now.getHours()).padStart(2, "0");
+const minutes = String(now.getMinutes()).padStart(2, "0");
 
-sketchybar("--set", NAME, `label=${label}`);
+sketchybar("--set", NAME, `label=${hours}:${minutes}`);

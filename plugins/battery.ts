@@ -1,5 +1,6 @@
 #!/Users/magtastic/.bun/bin/bun
 import { $ } from "bun";
+import { env } from "./lib/env.ts";
 import { sketchybar } from "./lib/sketchybar.ts";
 
 const colors = {
@@ -7,11 +8,11 @@ const colors = {
   warning: "0xfff38ba8",
 };
 
-const NAME = process.env.NAME!;
+const NAME = env("NAME");
 
 const data = await $`pmset -g batt`.text();
 const percentMatch = data.match(/(\d+)%/);
-const percent = percentMatch ? parseInt(percentMatch[1]!) : 0;
+const percent = percentMatch?.[1] ? parseInt(percentMatch[1], 10) : 0;
 const charging = data.includes("AC Power");
 const caffeinated = (await $`pgrep -x caffeinate`.quiet().nothrow()).exitCode === 0;
 
@@ -35,4 +36,4 @@ if (caffeinated) {
   icon = `􀸙 ${icon}`;
 }
 
-sketchybar("-m", "--set", NAME, `label=${icon}`);
+sketchybar("-m", "--set", NAME, `label=${icon}`, `label.color=${color}`);

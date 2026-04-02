@@ -1,8 +1,9 @@
 #!/Users/magtastic/.bun/bin/bun
 import { $ } from "bun";
+import { env } from "./lib/env.ts";
 import { sketchybar } from "./lib/sketchybar.ts";
 
-const NAME = process.env.NAME!;
+const NAME = env("NAME");
 const output = await $`ifconfig en0`.text();
 const active = output.includes("status: active");
 
