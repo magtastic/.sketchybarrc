@@ -36,25 +36,18 @@ sketchybar --default updates=when_shown                        \
 
 source "$ITEM_DIR/space.list.sh"
 source "$ITEM_DIR/space.mode.sh"
-
 source "$ITEM_DIR/window.title.sh"
-
 source "$ITEM_DIR/calendar.clock.sh"
-
 source "$ITEM_DIR/sound.output.sh"
-
 source "$ITEM_DIR/network.wifi.sh"
-# source "$ITEM_DIR/network.vpn.sh"
-
 source "$ITEM_DIR/input.source.sh"
-
-source "$ITEM_DIR/upcoming.sh"
-
 source "$ITEM_DIR/battery.sh"
-# source "$ITEM_DIR/calendar.date.sh"
+
+##### Autohide bar when native menu bar appears #####
+pkill -f "bar.autohide.ts" 2>/dev/null
+"$PLUGIN_DIR/bar.autohide.ts" &
 
 ##### Finalizing Setup #####
 sketchybar --update
 
 echo "sketchybar configuration loaded.."
-

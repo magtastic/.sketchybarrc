@@ -15,6 +15,6 @@ for i in "${!SPACE_ICONS[@]}"; do
                                         icon.font="SF Pro:Bold:17.0"                   \
                                         background.drawing=off                         \
                                         label.drawing=off                              \
-                                        script="$PLUGIN_DIR/space.list.sh"             \
+                                        script="$PLUGIN_DIR/space.list.ts"             \
                                         click_script="yabai -m space --focus ${index}"
 done

@@ -6,4 +6,4 @@ sketchybar --add item calendar.clock right                             \
                                 background.padding_left=0              \
                                 label.padding_left=0                   \
                                 icon.drawing=off                       \
-                                script="$PLUGIN_DIR/calendar.clock.sh"
+                                script="$PLUGIN_DIR/calendar.clock.ts"

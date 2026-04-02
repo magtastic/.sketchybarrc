@@ -1,0 +1,9 @@
+#!/Users/magtastic/.bun/bin/bun
+import { $ } from "bun";
+import { sketchybar } from "./lib/sketchybar.ts";
+
+const NAME = process.env.NAME!;
+const output = await $`ifconfig en0`.text();
+const active = output.includes("status: active");
+
+sketchybar("-m", "--set", NAME, `drawing=${active ? "on" : "off"}`);
