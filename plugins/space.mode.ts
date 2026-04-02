@@ -72,7 +72,7 @@ const APP_ICONS: Record<string, string> = {
   "pgAdmin 4": "􀤃",
   DataGrip: "􀤃",
   "Activity Monitor": "􀍟",
-  Claude: "􁜟",
+  Claude: "􀋃",
   ChatGPT: "􀫥",
   Raycast: "􀊫",
   Alfred: "􀊫",
