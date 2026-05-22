@@ -1,4 +1,4 @@
-#!/Users/magtastic/.bun/bin/bun
+#!/usr/bin/env bun
 import { $ } from "bun";
 import { sketchybar } from "./lib/sketchybar.ts";
 

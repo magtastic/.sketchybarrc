@@ -1,18 +1,33 @@
 #!/usr/bin/env bash
+# macOS-native dark-menubar palette: translucent dark, pure white text,
+# frosted pill for active state. ARGB hex.
 
-# Catppuccin Mocha-inspired palette
-COLOR_BAR=0x00000000
+# Bar — fully transparent (blur still applies if blur_radius > 0).
+export COLOR_BAR=0x00000000
 
-COLOR_DEFAULT_ICON=0xffcdd6f4
-COLOR_DEFAULT_LABEL=0xffcdd6f4
+# Text & icons
+export COLOR_TEXT=0xffffffff         # pure white
+export COLOR_TEXT_MUTED=0x99ffffff   # 60% white — inactive workspace digit, etc.
+export COLOR_TEXT_DIM=0x66ffffff     # 40% white — disabled / deactivated
 
-COLOR_ATTENTION_ICON=0xfff9e2af
-COLOR_ATTENTION_LABEL=0xfff9e2af
+# Active state — frosted highlight (think Control Center selection).
+export COLOR_ACCENT=0x33ffffff       # 20% white pill
+export COLOR_ACCENT_ON=0xffffffff    # full-white text on the pill
 
-COLOR_WARNING_ICON=0xfff38ba8
-COLOR_WARNING_LABEL=0xfff38ba8
+# No colored group bracket — native menubar has no group framing.
+export COLOR_GROUP_BG=0x00000000
 
-COLOR_DEACTIVATED_ICON=0xffa6adc8
-COLOR_DEACTIVATED_LABEL=0xffa6adc8
+# Status colors
+export COLOR_ATTENTION=0xfff9d56e    # warm yellow (caffeinate, etc.)
+export COLOR_WARNING=0xffff6961      # soft red (low battery, etc.)
 
-COLOR_ACTIVATED_ICON=0xff89dceb
+# Back-compat (referenced from existing item .sh scripts and plugins).
+export COLOR_DEFAULT_ICON=$COLOR_TEXT
+export COLOR_DEFAULT_LABEL=$COLOR_TEXT
+export COLOR_ATTENTION_ICON=$COLOR_ATTENTION
+export COLOR_ATTENTION_LABEL=$COLOR_ATTENTION
+export COLOR_WARNING_ICON=$COLOR_WARNING
+export COLOR_WARNING_LABEL=$COLOR_WARNING
+export COLOR_DEACTIVATED_ICON=$COLOR_TEXT_DIM
+export COLOR_DEACTIVATED_LABEL=$COLOR_TEXT_DIM
+export COLOR_ACTIVATED_ICON=$COLOR_TEXT

@@ -1,4 +1,4 @@
-#!/Users/magtastic/.bun/bin/bun
+#!/usr/bin/env bun
 import { $ } from "bun";
 import { APP_ICONS, DEFAULT_ICON } from "./lib/app-icons.ts";
 import { env } from "./lib/env.ts";

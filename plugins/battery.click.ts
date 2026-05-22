@@ -1,4 +1,4 @@
-#!/Users/magtastic/.bun/bin/bun
+#!/usr/bin/env bun
 import { $ } from "bun";
 
 const running = (await $`pgrep -x caffeinate`.quiet().nothrow()).exitCode === 0;

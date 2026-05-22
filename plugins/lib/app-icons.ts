@@ -32,6 +32,7 @@ export const APP_ICONS: Record<string, string> = {
   Polymail: "􀍕",
   Spark: "􀍕",
   Mimestream: "􀍕",
+  Superhuman: "􀍕",
   Calendar: "􀉉",
   Cron: "􀉉",
   Fantastical: "􀉉",

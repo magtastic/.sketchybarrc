@@ -2,37 +2,42 @@
 
 source "/Users/magtastic/.config/sketchybar/colors.sh"
 
-PADDINGS=5 # All paddings use this value (icon, label, background and bar paddings)
-
 PLUGIN_DIR="/Users/magtastic/.config/sketchybar/plugins"
 ITEM_DIR="/Users/magtastic/.config/sketchybar/items"
-UPDATE_DIR="/Users/magtastic/.config/sketchybar/updates"
 
-sketchybar --bar sticky=on           \
-                 height=40           \
-                 blur_radius=25      \
-                 position=top        \
-                 padding_left=15     \
-                 padding_right=10    \
-                 color=$COLOR_BAR    \
-                 topmost=off         \
-                 shadow=on           \
-                 font_smoothing=off
+sketchybar --bar sticky=on             \
+                 display=all           \
+                 height=36             \
+                 blur_radius=30        \
+                 position=top          \
+                 padding_left=10       \
+                 padding_right=10      \
+                 color=$COLOR_BAR      \
+                 topmost=off           \
+                 shadow=off            \
+                 corner_radius=0       \
+                 font_smoothing=on
 
 sketchybar --default updates=when_shown                        \
                      drawing=on                                \
                      label.font="SF Pro Display:Semibold:13.0" \
-                     label.color=0xffffffff                    \
-                     label.padding_left=0                      \
-                     label.padding_right=0                     \
+                     label.color=$COLOR_TEXT                   \
+                     label.padding_left=4                      \
+                     label.padding_right=4                     \
                      label.y_offset=0                          \
-                     icon.font="SF Pro Display:Semibold:15.0"  \
-                     icon.color=0xffffffff                     \
-                     icon.padding_left=0                       \
-                     icon.padding_right=2                      \
-                     background.corner_radius=3                \
-                     background.padding_left=5                 \
-                     background.padding_right=5
+                     icon.font="SF Pro Display:Semibold:14.0"  \
+                     icon.color=$COLOR_TEXT                    \
+                     icon.padding_left=4                       \
+                     icon.padding_right=4                      \
+                     background.corner_radius=6                \
+                     background.height=24                      \
+                     background.padding_left=2                 \
+                     background.padding_right=2
+
+# AeroSpace fires this event on every workspace switch (configured via
+# exec-on-workspace-change in aerospace.toml). Must be declared before any
+# item subscribes to it.
+sketchybar --add event aerospace_workspace_change
 
 source "$ITEM_DIR/space.list.sh"
 source "$ITEM_DIR/calendar.clock.sh"
@@ -41,26 +46,18 @@ source "$ITEM_DIR/network.wifi.sh"
 source "$ITEM_DIR/input.source.sh"
 source "$ITEM_DIR/battery.sh"
 
-##### Bracket: left-side workspace group #####
-sketchybar --add bracket workspace                                                     \
-                space.list.1 space.list.2 space.list.3 space.list.4 space.list.5       \
-                space.list.6 space.list.7 space.list.8 space.list.9 space.list.10      \
-                space.list.11 space.list.12 space.list.13                               \
-           --set workspace background.color=0x20cdd6f4                                 \
-                           background.corner_radius=8                                  \
-                           background.height=30
-
-##### Bracket: right-side status group #####
+# Right-side status group: subtle pill background tying icons together.
 sketchybar --add bracket status battery calendar.clock sound.output network.wifi input \
-           --set status background.color=0x20cdd6f4                                   \
-                        background.corner_radius=8                                    \
-                        background.height=30
+           --set status background.color=$COLOR_GROUP_BG                               \
+                        background.corner_radius=8                                     \
+                        background.height=26                                           \
+                        background.padding_left=4                                      \
+                        background.padding_right=4
 
-##### Autohide bar when native menu bar appears #####
+# Slide bar out of the way when the native menu bar is summoned.
 pkill -f "bar.autohide.ts" 2>/dev/null
 "$PLUGIN_DIR/bar.autohide.ts" &
 
-##### Finalizing Setup #####
 sketchybar --update
 
 echo "sketchybar configuration loaded.."
